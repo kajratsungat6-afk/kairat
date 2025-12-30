@@ -22,7 +22,7 @@ public abstract class ContentItem {
 
     public void setTitle(String title) {
         if (title == null || title.isBlank()) {
-            throw new IllegalArgumentException("Title must not be null or blank");
+            throw new IllegalArgumentException();
         }
         this.title = title;
     }
@@ -34,7 +34,7 @@ public abstract class ContentItem {
     public void setYear(int year) {
         int currentYear = java.time.Year.now().getValue();
         if (year < 1990 || year > currentYear) {
-            throw new IllegalArgumentException("Year must be between 1990 and current year");
+            throw new IllegalArgumentException();
         }
         this.year = year;
     }
@@ -45,7 +45,7 @@ public abstract class ContentItem {
 
     public void setDurationMinutes(int durationMinutes) {
         if (durationMinutes <= 0) {
-            throw new IllegalArgumentException("Duration must be > 0");
+            throw new IllegalArgumentException();
         }
         this.durationMinutes = durationMinutes;
     }
